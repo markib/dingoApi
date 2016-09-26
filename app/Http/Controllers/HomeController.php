@@ -15,7 +15,7 @@ class HomeController extends Controller
             // Base URI is used with relative requests
             'base_uri' => 'http://localhost:8005/api/',
             // You can set any number of default request options.
-            //'timeout'  => 2.0,
+            'timeout'  => 2.0,
         ]);
         // Send a request to https://foo.com/api/test
         $response = $client->request('GET', 'protected',['auth' => ['john@clivern.com', '1234']]);

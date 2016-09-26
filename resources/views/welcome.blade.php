@@ -4,9 +4,8 @@
         <title>Laravel</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-        <link href="dist/css/bootstrap-material-design.min.css" rel="stylesheet" type="text/css">
-        <link href="dist/css/ripples.min.css" rel="stylesheet" type="text/css">
-        {{--<style>
+
+        <style>
             html, body {
                 height: 100%;
             }
@@ -34,35 +33,47 @@
             .title {
                 font-size: 96px;
             }
-        </style>--}}
+        </style>
     </head>
     <body>
         <div class="container">
             <div class="content">
                 <div class="row">
 
-                    <div class="col-md-4">
+                    <div class="col-md-8 col-md-offset-2">
 
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Login</h3>
-                            </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Login</div>
 
                             <div class="panel-body">
 
-                                    <div class="well">
                             {{--    {{ Form::open(['route' => 'login', 'class' => 'form-horizontal']) }}--}}
                                 {{ Form::open(array('action' => 'UserController@Login', 'class' => 'form-horizontal')) }}
-                                     <div class="form-group label-floating is-empty">
-                                    {{ Form::label('email','Email',  ['class' => 'col-md-4 control-label','for'=>'email']) }}
+                                <div class="form-group">
+                                    {{ Form::label('email', 'Email') }}
+                                    <div class="col-md-6">
+                                        {{ Form::text('email') }}
+                                    </div><!--col-md-6-->
+                                </div><!--form-group-->
 
-                                        {{ Form::input('email', 'email','',['class'=>'form-control']) }}
+                                <div class="form-group">
+                                    {{ Form::label('password', 'Password') }}
+                                    <div class="col-md-6">
+                                        {{ Form::password('password') }}
                                     </div><!--col-md-6-->
                                 </div><!--form-group-->
 
 
+
+
+                                <div class="form-group">
+                                    <div class="col-md-6 col-md-offset-4">
+                                        {{ Form::submit('Submit') }}
+
+                                    </div><!--col-md-6-->
+                                </div><!--form-group-->
+
                                 {{ Form::close() }}
-                                        </div><!-- well -->
 
 
                             </div><!-- panel body -->
@@ -75,7 +86,7 @@
 
             </div>
         </div>
-        {{--{{$data->users[0]->name}}--}}
+        {{$data->users[0]->name}}
 
        {{-- <button class="ajax">Click Here</button>--}}
     </body>
@@ -96,11 +107,4 @@
             });
         });
     </script>--}}
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="dist/js/material.min.js"></script>
-    <script type="text/javascript" src="dist/js/ripples.min.js"></script>
-    <script type="text/javascript">
-        $.material.init()
-    </script>
 </html>
